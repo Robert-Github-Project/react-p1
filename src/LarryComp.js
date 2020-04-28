@@ -1,19 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 function LarryComp(props) {
   const [count, setCount] = useState(1000);
-  function myOnClickCount(e) {
-    count++;
-    console.log("we just clicked count", count);
-props.countFunc();
+  function myOnClick(e) {
+ 
+    props.countFunc();
   }
   return (
     <div>
-      <h1 onClick={props.countFunc}>Hello World from LarryComp {count}</h1>
-
+      <h1 onClick={props.countFunc}>Hello World from LarryComp {props.countx}</h1>
+      {/* <hi onClick={myOnClick}>Hello World: count {count}</h1> */}
     </div>
-  );
+  )
 }
 
-export default App;
+export default LarryComp;
